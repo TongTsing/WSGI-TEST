@@ -1,6 +1,8 @@
 def app(environ, start_response):
+    import os
     start_response("200 OK", [('Content-Type', 'text/html')])
     file_name = environ.get('PATH_INFO', '/')[1:] or 'index.html'
+    os.chdir("/root/PycharmProjects/WSGI-TEST/webServer")
     HTML_ROOT_DIR = '../views/'
     print("file path:", HTML_ROOT_DIR + file_name)
 
